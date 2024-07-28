@@ -29,6 +29,7 @@ flutter:
     - assets/audio/ocean.mp3
     - assets/audio/waterfall.mp3
     - assets/audio/wind.mp3
+    - assets/images/cards/
   fonts:
     - family: Edu
       fonts:
