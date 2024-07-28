@@ -8,6 +8,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  just_audio: ^0.9.39
+  font_awesome_flutter: ^10.7.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -17,6 +19,16 @@ flutter:
 
   assets:
     - assets/123.jpg
+    - assets/images/forest.jpeg
+    - assets/images/night.jpeg
+    - assets/images/ocean.jpeg
+    - assets/images/waterfall.jpeg
+    - assets/images/wind.jpeg
+    - assets/audio/forest.mp3
+    - assets/audio/night.mp3
+    - assets/audio/ocean.mp3
+    - assets/audio/waterfall.mp3
+    - assets/audio/wind.mp3
   fonts:
     - family: Edu
       fonts:
