@@ -19,6 +19,7 @@ flutter:
 
   assets:
     - assets/123.jpg
+    - assets/
     - assets/images/forest.jpeg
     - assets/images/night.jpeg
     - assets/images/ocean.jpeg
