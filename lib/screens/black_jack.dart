@@ -170,7 +170,7 @@ class _BlackJackState extends State<BlackJack> {
     }
   }
 
-  void EndGame() {
+  void endGame() {
     setState(() {
       isGameStart = false;
       myCards = [];
@@ -237,7 +237,7 @@ class _BlackJackState extends State<BlackJack> {
                         ),
                         Buttondefault(
                             color: Colors.red,
-                            onPressed: EndGame,
+                            onPressed: endGame,
                             text: 'Закончить игру'
                         ),
                       ],
