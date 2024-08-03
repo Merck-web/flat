@@ -90,11 +90,11 @@ class _BlackJackState extends State<BlackJack> {
     playingCards.addAll(deckOfCards);
   }
 
-  String getRandomCard () {
+  String getRandomCard() {
     Random random = Random();
-    int randomIndex  = random.nextInt(playingCards.length);
+    int randomIndex = random.nextInt(playingCards.length);
     String cardIndex = playingCards.keys.elementAt(randomIndex);
-    playingCards.removeWhere((key,value) => key == cardIndex);
+    playingCards.removeWhere((key, value) => key == cardIndex);
     return cardIndex;
   }
 
@@ -102,7 +102,7 @@ class _BlackJackState extends State<BlackJack> {
     setState(() {
       isGameStart = true;
     });
-    
+
     myCards = [];
     dealersCards = [];
     playingCards = {};
@@ -186,64 +186,54 @@ class _BlackJackState extends State<BlackJack> {
       body: isGameStart == true
           ? SafeArea(
               child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Карты дилера
-                  Column(
-                    children: [
-                      Text(
-                        "Счет дилера $dealerScore",
-                        style: TextStyle(
-                          color: dealerColor(),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 28,
-                      ),
-                      CardGridWidget(cards: dealersCards),
-                    ],
-                  ),
-                  // Наши карты
-                  Column(
-                    children: [
-                      Text(
-                          "Ваш счет $playScore",
-                        style: TextStyle(
-                          color: playerColor(),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 28,
-                      ),
-                      CardGridWidget(cards: myCards),
-                    ],
-                  ),
-                  // Колонка action
-                  IntrinsicWidth(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // Карты дилера
+                    Column(
                       children: [
-                        Buttondefault(
-                            color: Colors.brown,
-                            onPressed: addCard,
-                            text: 'Другую карту'
+                        Text(
+                          "Счет дилера $dealerScore",
+                          style: TextStyle(
+                            color: dealerColor(),
+                          ),
                         ),
-                        Buttondefault(
-                            color: Colors.amber,
-                            onPressed: startGame,
-                            text: 'Следующий раунд'
+                        SizedBox(
+                          height: 28,
                         ),
-                        Buttondefault(
-                            color: Colors.red,
-                            onPressed: endGame,
-                            text: 'Закончить игру'
-                        ),
+                        CardGridWidget(cards: dealersCards),
                       ],
                     ),
-                  ),
-                ],
+                    // Наши карты
+                    Column(
+                      children: [
+                        Text(
+                          "Ваш счет $playScore",
+                          style: TextStyle(
+                            color: playerColor(),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 28,
+                        ),
+                        CardGridWidget(cards: myCards),
+                      ],
+                    ),
+                    // Колонка action
+                    IntrinsicWidth(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Buttondefault(color: Colors.brown, onPressed: addCard, text: 'Другую карту'),
+                          Buttondefault(color: Colors.amber, onPressed: startGame, text: 'Следующий раунд'),
+                          Buttondefault(color: Colors.red, onPressed: endGame, text: 'Закончить игру'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ))
           : Center(
@@ -256,4 +246,3 @@ class _BlackJackState extends State<BlackJack> {
     );
   }
 }
-
