@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/screens/CV_screen.dart';
+import 'package:mobile_app/screens/GalleryScreen.dart';
 import 'package:mobile_app/screens/black_jack.dart';
-import 'package:mobile_app/screens/layout_screen.dart';
 import 'package:mobile_app/screens/meditation_app_screen.dart';
 
 class NavigationView extends StatefulWidget {
@@ -18,6 +18,7 @@ class _NavigationViewState extends State<NavigationView> {
     const MeditationAppScreen(),
     const BlackJack(),
     const CvScreen(),
+    const GalleryScreen(),
   ];
 
   @override
@@ -35,9 +36,14 @@ class _NavigationViewState extends State<NavigationView> {
           BottomNavigationBarItem(icon: Icon(Icons.mediation), label: 'Музыка'),
           BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: 'Играть'),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_view_day), label: 'CV'),
+          BottomNavigationBarItem(icon: Icon(Icons.browse_gallery), label: 'Галлерея'),
         ],
         currentIndex: selectedWidgetsIndex,
         selectedItemColor: Colors.cyan,
+        backgroundColor: Color(0x00ffffff), // transparent, you could use 0x44aaaaff to make it slightly less transparent with a blue hue.
+        type: BottomNavigationBarType.fixed,
+        unselectedItemColor: Colors.grey,
+        elevation: 0, // to get rid of the shadow
         onTap: (index) {
           setState(() {
             selectedWidgetsIndex = index;
