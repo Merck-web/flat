@@ -170,6 +170,16 @@ class _BlackJackState extends State<BlackJack> {
     }
   }
 
+  void EndGame() {
+    setState(() {
+      isGameStart = false;
+      myCards = [];
+      dealersCards = [];
+      playingCards = {};
+      playingCards.addAll(deckOfCards);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -225,6 +235,11 @@ class _BlackJackState extends State<BlackJack> {
                             onPressed: startGame,
                             text: 'Следующий раунд'
                         ),
+                        Buttondefault(
+                            color: Colors.red,
+                            onPressed: EndGame,
+                            text: 'Закончить игру'
+                        ),
                       ],
                     ),
                   ),
@@ -232,9 +247,10 @@ class _BlackJackState extends State<BlackJack> {
               ),
             ))
           : Center(
-              child: MaterialButton(
+              child: Buttondefault(
                 onPressed: startGame,
-                child: const Text('Начать игру'),
+                text: 'Начать игру',
+                color: Colors.green,
               ),
             ),
     );
