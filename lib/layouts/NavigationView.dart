@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/screens/CV_screen.dart';
 import 'package:mobile_app/screens/GalleryScreen.dart';
+import 'package:mobile_app/screens/SportTheBird.dart';
 import 'package:mobile_app/screens/black_jack.dart';
 import 'package:mobile_app/screens/meditation_app_screen.dart';
 
@@ -19,6 +20,7 @@ class _NavigationViewState extends State<NavigationView> {
     const BlackJack(),
     const CvScreen(),
     const GalleryScreen(),
+    const SportTheBird(),
   ];
 
   @override
@@ -37,6 +39,7 @@ class _NavigationViewState extends State<NavigationView> {
           BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: 'Играть'),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_view_day), label: 'CV'),
           BottomNavigationBarItem(icon: Icon(Icons.browse_gallery), label: 'Галлерея'),
+          BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Карта'),
         ],
         currentIndex: selectedWidgetsIndex,
         selectedItemColor: Colors.cyan,

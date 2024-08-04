@@ -32,6 +32,13 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => GalleryCubit()..getImages(),
       child: MaterialApp(
+          theme: ThemeData(
+            primaryColor: Color(0xFF334257),
+            colorScheme: ColorScheme.dark().copyWith(
+              primary: Color(0xFF156BE3),
+              secondary: Color(0xFF15E3B3),
+            ),
+          ),
           home: NavigationView()
       ),
     );
